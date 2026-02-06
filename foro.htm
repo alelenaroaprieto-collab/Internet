@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
 
 <head>
@@ -108,6 +108,7 @@
 	text-align: left;
 }
 </style>
+
 <script type="text/javascript">
 var timers = {};
 
@@ -131,6 +132,7 @@ function ocultarGrupo(clase) {
     }, 5000); 
 }
 </script>
+
 <script type="text/javascript">
 function publicarOpinion() {
     var nombre = document.getElementById("nombre").value;
@@ -141,43 +143,54 @@ function publicarOpinion() {
         return;
     }
 
-    var opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
-
-    opiniones.unshift({
-        nombre: nombre,
-        opinion: opinion
+    // Enviar la nueva opinión al servidor (usando fetch)
+    fetch('http://localhost:5000/api/opiniones', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre: nombre, opinion: opinion })
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Opinión publicada:', data);
+        mostrarOpiniones();  // Recargar las opiniones
+    })
+    .catch(error => {
+        console.error('Error:', error);
     });
-
-    localStorage.setItem("opiniones", JSON.stringify(opiniones));
-
-    mostrarOpiniones();
 
     document.getElementById("nombre").value = "";
     document.getElementById("opinion").value = "";
 }
 </script>
 
-
 <script type="text/javascript">
 function mostrarOpiniones() {
     var contenedor = document.getElementById("listaOpiniones");
     contenedor.innerHTML = "";
 
-    var opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+    // Obtener las opiniones del servidor usando fetch
+    fetch('http://localhost:5000/api/opiniones')
+        .then(response => response.json())
+        .then(opiniones => {
+            opiniones.forEach(function(op) {
+                var div = document.createElement("div");
+                div.style.border = "1px solid #3399FF";
+                div.style.padding = "10px";
+                div.style.marginBottom = "10px";
+                div.style.backgroundColor = "#E6F5FF";
 
-    opiniones.forEach(function(op) {
-        var div = document.createElement("div");
-        div.style.border = "1px solid #3399FF";
-        div.style.padding = "10px";
-        div.style.marginBottom = "10px";
-        div.style.backgroundColor = "#E6F5FF";
+                div.innerHTML =
+                    "<strong>" + op.nombre + "</strong><br />" +
+                    "<p>" + op.opinion + "</p>";
 
-        div.innerHTML =
-            "<strong>" + op.nombre + "</strong><br />" +
-            "<p>" + op.opinion + "</p>";
-
-        contenedor.appendChild(div);
-    });
+                contenedor.appendChild(div);
+            });
+        })
+        .catch(error => {
+            console.error('Error al cargar las opiniones:', error);
+        });
 }
 </script>
 
@@ -244,157 +257,5 @@ function mostrarOpiniones() {
 			<tr class="menu-navegadores"
 			    onmouseover="mostrarGrupo('submenu-navegadores');"
 			    onmouseout="ocultarGrupo('submenu-navegadores');">
-				<td class="style26" style="width: 100px; height: 28px;">
-				</td>
-				<td class="style22" style="width: 300px; height: 28px;">
-				<p class="style11"><a class="style12" href="Navegadores.htm">
-				<span class="style21">NAVEGADORES</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-navegadores">
-				<td class="style20" style="width: 100px; height: 28px;">
-				<p class="style27"></p>
-				</td>
-				<td class="style23" style="width: 300px; height: 28px;">
-				<p class="style27"><a href="navhist.htm" class="style12">
-				<span class="style21">Historia</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-navegadores">
-				<td class="style20" style="width: 100px; height: 28px;">
-				<p class="style27"></p>
-				</td>
-				<td class="style23" style="width: 300px; height: 28px;">
-				<p class="style27"><a href="navfunc.htm" class="style12">
-				<span class="style21">Función</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-navegadores">
-				<td class="style20" style="width: 100px; height: 28px;">
-				<p class="style27"></p>
-				</td>
-				<td class="style23" style="width: 300px; height: 28px;">
-				<p class="style27"><a href="navtip.htm" class="style12">
-				<span class="style21">Tipos</span></a></p>
-				</td>
-			</tr>
-			<tr class="menu-protocolos"
-			    onmouseover="mostrarGrupo('submenu-protocolos');"
-			    onmouseout="ocultarGrupo('submenu-protocolos');">
-				<td class="style4" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style22" style="width: 300px">
-				<p class="style11"><a class="style12" href="Protocolos.htm">
-				<span class="style21">PROTOCOLOS</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-protocolos">
-				<td class="style20" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style23" style="width: 300px">
-				<p class="style27"><a href="protcpip.htm" class="style12">
-				<span class="style23">TCP/IP</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-protocolos">
-				<td class="style20" style="width: 100px; ">
-				</td>
-				<td class="style23" style="width: 300px">
-				<p class="style27"><a href="protftp.htm" class="style12">
-				<span class="style23">FTP</span></a></p>
-				</td>
-			</tr>
-			<tr class="menu-webs"
-			    onmouseover="mostrarGrupo('submenu-webs');"
-			    onmouseout="ocultarGrupo('submenu-webs');">
-							<td class="style4" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style22" style="width: 300px">
-				<p class="style11"><a class="style12" href="Webs.htm">
-				<span class="style21">PÁGINAS WEB</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-webs">
-				<td class="style20" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style23" style="width: 300px">
-				<p class="style27"><a href="wtipos.htm" class="style12">
-				<span class="style21">Tipos</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-webs">
-				<td class="style20" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style23" style="width: 300px">
-				<p class="style27"><a href="wconst.htm" class="style12">
-				<span class="style21">Construcción</span></a></p>
-				</td>
-			</tr>
-			<tr class="submenu-webs">
-				<td class="style20" style="width: 100px; ">
-				</td>
-				<td class="style23" style="width: 300px">
-				<p class="style27"><a href="whttp.htm" class="style12">
-				<span class="style21">Http</span></a></p>
-				</td>
-			</tr>
-			<tr>
-				<td class="style4" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style22" style="width: 300px">
-				<p class="style11">
-				<a class="style12" href="Funcionalidades.htm">
-				<span class="style21">FUNCION</span></a><span class="style21">ES</span></p>
-				</td>
-			</tr>
-			<tr>
-				<td class="style4" style="width: 100px; ">
-				&nbsp;</td>
-				<td class="style22" style="width: 300px">
-				<p><a href="Privacidad.htm" class="style12">
-				<span class="style21">PRIVACIDAD</span></a></p>
-				</td>
-			</tr>
-		</table>
-		</td>
-		<td class="style15" style="width: 2450px" valign="top">
-		
-		    <h2 class="style30">&nbsp;</h2>
-		
-		    <form onsubmit="publicarOpinion(); return false;">
-		        <p>
-		            <label>&nbsp;&nbsp; Nombre:</label><br />
-		            &nbsp;&nbsp;&nbsp;
-		            <input type="text" id="nombre" style="width:31%; font-size:16px;" required />
-		        </p>
-		
-		        <p>
-		            <label>&nbsp;&nbsp; Escribe tu opinión:</label><br />
-		            &nbsp;&nbsp;
-		            <textarea id="opinion" style="width:95%; height:143px; font-size:18px;" required></textarea>
-		        </p>
-		
-		        <p style="text-align:center;">
-		            <input type="submit" value="Publicar opinión"
-		                   style="font-size:18px; padding:10px 30px;" />
-		        </p>
-		    </form>
-		
-		    <hr />
-		
-		    <h3>&nbsp;&nbsp; Opiniones publicadas</h3>
-		
-		    <div id="listaOpiniones" style="width:95%;"></div>
-		
-		</td>
-	<tr>
-		<td class="style8" style="width: 229px" valign="top">
-		&nbsp;</td>
-		<td class="style15" style="width: 2450px" valign="top">
-		
-		    &nbsp;</td>
-	</table>
+				<td class="style26" style
 
-</body>
-
-</html>

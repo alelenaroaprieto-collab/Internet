@@ -143,7 +143,7 @@ function publicarOpinion() {
         return;
     }
 
-    // Enviar la nueva opinión al servidor (usando fetch)
+    // Enviar la nueva opinión al servidor usando fetch
     fetch('http://localhost:5000/api/opiniones', {
         method: 'POST',
         headers: {
@@ -154,7 +154,7 @@ function publicarOpinion() {
     .then(response => response.json())
     .then(data => {
         console.log('Opinión publicada:', data);
-        mostrarOpiniones();  // Recargar las opiniones
+        mostrarOpiniones();  // Recargar las opiniones desde el servidor
     })
     .catch(error => {
         console.error('Error:', error);
@@ -170,7 +170,7 @@ function mostrarOpiniones() {
     var contenedor = document.getElementById("listaOpiniones");
     contenedor.innerHTML = "";
 
-    // Obtener las opiniones del servidor usando fetch
+    // Obtener las opiniones desde el servidor usando fetch
     fetch('http://localhost:5000/api/opiniones')
         .then(response => response.json())
         .then(opiniones => {
@@ -251,11 +251,4 @@ function mostrarOpiniones() {
 				&nbsp;</td>
 				<td class="style22" style="width: 300px">
 				<p class="style11"><a class="style12" href="Conexiones.htm">
-				<span class="style21">CONEXIONES</span></a></p>
-				</td>
-			</tr>
-			<tr class="menu-navegadores"
-			    onmouseover="mostrarGrupo('submenu-navegadores');"
-			    onmouseout="ocultarGrupo('submenu-navegadores');">
-				<td class="style26" style
-
+				<span class="

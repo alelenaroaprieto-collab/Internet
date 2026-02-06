@@ -1,0 +1,545 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>INTERNET</title>
+
+<style type="text/css">
+.style8 {
+	border: 1px solid #FFFFFF;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #3399FF;
+	color: #FFFFFF;
+}
+.style9 {
+	border-left: 3px solid #FFFFFF;
+	border-right: medium solid #FFFFFF;
+	border-top: 3px solid #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	font-size: 100pt;
+	background-color: #3399FF;
+	color: #FFFFFF;
+}
+.style10 {
+	border: 1px solid #CCFFFF;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #CCFFFF;
+}
+
+.style14 {
+	border-collapse: collapse;
+}
+
+.style15 {
+	border: 0 solid #CCFFFF;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #CCFFFF;
+}
+
+.style16 {
+	border-left: 3px solid #FFFFFF;
+	border-right: medium solid #FFFFFF;
+	border-top: 3px solid #FFFFFF;
+	border-bottom: 3px solid #FFFFFF;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+	font-size: 40pt;
+	background-color: #33CCFF;
+	color: #FFFFFF;
+}
+
+.style29 {
+	text-align: justify;
+	line-height: 150%;
+	text-indent: 49px;
+}
+
+.scroll-texto {
+	height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 12px;
+}
+.style3 {
+	border-color: #FFFFFF;
+	border-width: 0;
+	background-color: #3399FF;
+		font-size: x-large;
+		border-collapse: collapse;
+}
+.style4 {
+	font-family: "Times New Roman", Times, serif;
+	text-align: left;
+	color: #000000;
+}
+.style22 {
+	font-family: "Times New Roman", Times, serif;
+	text-align: left;
+	color: #FFFFFF;
+}
+.style11 {
+	color: #000000;
+}
+.style12 {
+	text-decoration: none;
+}
+.style21 {
+	color: #FFFFFF;
+}
+.style23 {
+	font-family: "Times New Roman", Times, serif;
+	text-align: left;
+	color: #FFFFFF;
+	background-color: #33CCFF;
+}
+.submenu-historia {
+    display: none;
+    background-color: #33CCFF;
+}     
+.style20 {
+	font-family: "Times New Roman", Times, serif;
+	text-align: left;
+	color: #000000;
+	background-color: #33CCFF;
+}
+.style19 {
+	margin-left: 40px;
+}
+.style26 {
+	border-width: 0;
+	font-family: "Times New Roman", Times, serif;
+	text-align: left;
+	color: #000000;
+}
+.submenu-navegadores {
+    display: none;
+    background-color: #33CCFF;
+}
+.style27 {
+	text-indent: 40px;
+}
+.submenu-protocolos {
+    display: none;
+    background-color: #33CCFF;
+}
+.submenu-webs {
+    display: none;
+    background-color: #33CCFF;
+}
+
+.scroll-texto::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-texto::-webkit-scrollbar-track {
+    background: #CCFFFF;
+    border-radius: 10px;
+}
+.scroll-texto::-webkit-scrollbar-thumb {
+    background: #3399FF;
+    border-radius: 10px;
+    border: 2px solid #CCFFFF;
+}
+
+.scroll-texto::-webkit-scrollbar-thumb:hover {
+    background: #007ACC;
+}
+.style34 {
+	border: 0 solid #CCFFFF;
+	font-family: "Times New Roman", Times, serif;
+	background-color: #CCFFFF;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+var timers = {};
+
+function mostrarGrupo(clase) {
+    if (timers[clase]) {
+        clearTimeout(timers[clase]);
+    }
+
+    var elementos = document.querySelectorAll('.' + clase);
+    elementos.forEach(function(el) {
+        el.style.display = 'table-row';
+    });
+}
+
+function ocultarGrupo(clase) {
+    timers[clase] = setTimeout(function() {
+        var elementos = document.querySelectorAll('.' + clase);
+        elementos.forEach(function(el) {
+            el.style.display = 'none';
+        });
+    }, 5000); 
+}
+</script>
+
+</head>
+
+<body>
+
+<table style="width:1366px; height:600px;" class="style14">
+<tr>
+	<td class="style9" colspan="4">INTERNET</td>
+</tr>
+
+<tr>
+	<td class="style16" colspan="4">FUNCIONES DE INTERNET</td>
+</tr>
+
+<tr>
+	<td class="style8" valign="top" style="width: 229px" rowspan="2">
+
+		<table style="width: 250px; height: 300px;" class="style3" cellspacing="0" cellpadding="0">
+			<tr>
+				<td class="style4" style="width: 100px; " rowspan="2">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px; height: 44px;">
+				<p class="style11"><a class="style12" href="index.htm">
+				<span class="style21">INICIO</span></a></p>
+				</td>
+			<tr class="menu-definicion"
+			    onmouseover="mostrarGrupo('submenu-historia');"
+			    onmouseout="ocultarGrupo('submenu-historia');">
+				<td class="style22" style="width: 300px">
+					<p class="style11">
+						<a class="style12" onclick="toggleMenu();" href="default.htm">
+							<span class="style21">DEFINICIÓN</span>
+						</a>
+					</p>
+				</td>
+			</tr>			
+			<tr class="submenu-historia">
+				<td class="style20">&nbsp;</td>
+				<td class="style23">
+					<p class="style19">
+						<a href="Historia.htm" class="style12">
+							<span class="style21">Historia</span>
+						</a>
+					</p>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p class="style21"><a class="style12" href="Tarjeta.htm">
+				<span class="style21">TARJETA</span></a></p>
+				</td>
+			</tr>
+
+			<tr>
+				<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p class="style11"><a class="style12" href="Conexiones.htm">
+				<span class="style21">CONEXIONES</span></a></p>
+				</td>
+			</tr>
+			<tr class="menu-navegadores"
+			    onmouseover="mostrarGrupo('submenu-navegadores');"
+			    onmouseout="ocultarGrupo('submenu-navegadores');">
+				<td class="style26" style="width: 100px; height: 28px;">
+				</td>
+				<td class="style22" style="width: 300px; height: 28px;">
+				<p class="style11"><a class="style12" href="Navegadores.htm">
+				<span class="style21">NAVEGADORES</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-navegadores">
+				<td class="style20" style="width: 100px; height: 28px;">
+				<p class="style27"></p>
+				</td>
+				<td class="style23" style="width: 300px; height: 28px;">
+				<p class="style27"><a href="navhist.htm" class="style12">
+				<span class="style21">Historia</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-navegadores">
+				<td class="style20" style="width: 100px; height: 28px;">
+				<p class="style27"></p>
+				</td>
+				<td class="style23" style="width: 300px; height: 28px;">
+				<p class="style27"><a href="navfunc.htm" class="style12">
+				<span class="style21">Función</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-navegadores">
+				<td class="style20" style="width: 100px; height: 28px;">
+				<p class="style27"></p>
+				</td>
+				<td class="style23" style="width: 300px; height: 28px;">
+				<p class="style27"><a href="navtip.htm" class="style12">
+				<span class="style21">Tipos</span></a></p>
+				</td>
+			</tr>
+			<tr class="menu-protocolos"
+			    onmouseover="mostrarGrupo('submenu-protocolos');"
+			    onmouseout="ocultarGrupo('submenu-protocolos');">
+				<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p class="style11"><a class="style12" href="Protocolos.htm">
+				<span class="style21">PROTOCOLOS</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-protocolos">
+				<td class="style20" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style23" style="width: 300px">
+				<p class="style27"><a href="protcpip.htm" class="style12">
+				<span class="style23">TCP/IP</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-protocolos">
+				<td class="style20" style="width: 100px; ">
+				</td>
+				<td class="style23" style="width: 300px">
+				<p class="style27"><a href="protftp.htm" class="style12">
+				<span class="style23">FTP</span></a></p>
+				</td>
+			</tr>
+			<tr class="menu-webs"
+			    onmouseover="mostrarGrupo('submenu-webs');"
+			    onmouseout="ocultarGrupo('submenu-webs');">
+							<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p class="style11"><a class="style12" href="Webs.htm">
+				<span class="style21">PÁGINAS WEB</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-webs">
+				<td class="style20" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style23" style="width: 300px">
+				<p class="style27"><a href="wtipos.htm" class="style12">
+				<span class="style21">Tipos</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-webs">
+				<td class="style20" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style23" style="width: 300px">
+				<p class="style27"><a href="wconst.htm" class="style12">
+				<span class="style21">Construcción</span></a></p>
+				</td>
+			</tr>
+			<tr class="submenu-webs">
+				<td class="style20" style="width: 100px; ">
+				</td>
+				<td class="style23" style="width: 300px">
+				<p class="style27"><a href="whttp.htm" class="style12">
+				<span class="style21">Http</span></a></p>
+				</td>
+			</tr>
+			<tr>
+				<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p class="style11">
+				<a class="style12" href="Funcionalidades.htm">
+				<span class="style21">FUNCION</span></a><span class="style21">ES</span></p>
+				</td>
+			</tr>
+			<tr>
+				<td class="style4" style="width: 100px; ">
+				&nbsp;</td>
+				<td class="style22" style="width: 300px">
+				<p><a href="Privacidad.htm" class="style12">
+				<span class="style21">PRIVACIDAD</span></a></p>
+				</td>
+			</tr>
+		</table>
+
+	</td>
+
+	<td class="style15" rowspan="2">&nbsp;</td>
+
+	<!-- ====== COLUMNA CON SCROLL ====== -->
+	<td class="style15" valign="top">
+
+	<div class="scroll-texto">
+
+	<p class="style29">&nbsp;</p>
+	<p class="style29"><strong>1. Email.</strong></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		El correo electrónico o e-mail (tomado del inglés electronic mail) es un 
+		medio de comunicación digital por escrito, similar a las cartas y 
+		postales del correo postal de antaño, que aprovecha la tecnología 
+		multimediática de Internet para el envío en diferido de mensajes más o 
+		menos largos y dotados o no de adjuntos, entre dos o más interlocutores 
+		diferentes. El correo electrónico fue durante mucho tiempo la forma de 
+		comunicación estándar entre los usuarios de Internet. Aún hoy en día 
+		ocupa un rol privilegiado, especialmente a la hora de transmitir 
+		información adicional (archivos adjuntos de diverso tipo) que no 
+		requiere de atención inmediata. </span></p>
+	<p class="style29">
+		&nbsp;</p>
+
+	<p class="style29"><strong>2. Videoconferencias.</strong></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		Una videoconferencia es una forma de comunicación en tiempo real que 
+		permite a dos o más personas verse y escucharse a través de Internet, 
+		sin necesidad de estar en el mismo lugar físico. Dicho de forma simple: 
+		es como una reunión presencial, pero desde cualquier parte del mundo. Tú 
+		puedes hablar, ver a la otra persona, compartir tu pantalla, presentar 
+		un documento o incluso colaborar en una pizarra virtual. Detrás de una videoconferencia hay un proceso técnico muy 
+		interesante, pero no necesitas ser ingeniero para entenderlo. 
+		Básicamente, cuando tú hablas o te mueves frente a la cámara, tu 
+		dispositivo (ordenador, tablet o móvil) captura imagen y sonido a través 
+		del micrófono y la cámara. Estos datos se convierten en paquetes 
+		digitales gracias a un software llamado códec (como H.264 o Opus), que 
+		los comprime para que ocupen menos y viajen más rápido. </span></p>
+	<p class="style29">
+	&nbsp;</p>
+
+	<p class="style29"><strong>3. Compras.</strong></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		En la era digital actual, las compras online han revolucionado la forma 
+		en que adquirimos productos y servicios. A través de plataformas 
+		virtuales, los consumidores pueden explorar una amplia variedad de 
+		opciones, comparar precios y realizar transacciones desde la comodidad 
+		de sus hogares. Este proceso se basa en la interacción entre el cliente, 
+		el vendedor y la plataforma de comercio electrónico, donde se gestionan 
+		los pedidos, el pago y el envío de los productos. Este tipo de compra ofrece una experiencia conveniente y 
+		eficiente para los consumidores, permitiéndoles acceder a una amplia 
+		variedad de productos sin tener que desplazarse físicamente a una 
+		tienda. Esta forma de comercio electrónico ha ganado popularidad en todo 
+		el mundo y seguirá evolucionando para satisfacer las necesidades 
+		cambiantes de los consumidores digitales.<o:p></o:p></span></p>
+	<p class="style29">
+	&nbsp;</p>
+
+	<p class="style29"><strong>4. Juegos.</strong></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		Básicamente un juego en línea es aquel que permite que los jugadores 
+		ingresen al mismo sin problemas por su ubicación, es decir que en un 
+		juego en línea pueden jugar usuarios de todas partes del mundo 
+		independientemente de su ubicación. Todos estos jugadores tienen un 
+		objetivo concreto, y muchas veces el juego consiste en crear equipos 
+		para derrotar a sus oponentes, lo que les brinda cierta popularidad en 
+		el círculo del título. Una de las causas principales por las cuales los juegos en línea 
+		son tan populares en estos días, es que cada jugador puede encontrar a 
+		otro usuario con el mismo nivel de habilidad dentro del propio juego, y 
+		no debe preocuparse por encontrar oponentes cerca de su ubicación, lo 
+		que garantiza que la partida será justa. </span></p>
+	<p class="style29">
+		&nbsp;</p>
+	<p class="style29">
+		<strong>5. Chat.</strong></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		Un chat es una herramienta de comunicación en línea que permite a los 
+		usuarios interactuar en tiempo real a través de mensajes de texto. Es 
+		utilizado tanto en sitios web como en aplicaciones móviles para brindar 
+		atención al cliente, resolver dudas, realizar ventas y generar 
+		engagement con los usuarios. El chat se ha convertido en una estrategia 
+		efectiva de marketing para mejorar la experiencia del cliente y aumentar 
+		la conversión. Es en este contexto que el chat se ha convertido en 
+		una herramienta esencial para el marketing y diseño web. Un chat es una 
+		forma de comunicación en tiempo real que permite a los usuarios 
+		interactuar a través de mensajes de texto.</span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		&nbsp;</o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		<strong>6. Redes sociales.</strong>&nbsp;</o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		Las redes sociales son plataformas digitales formadas por comunidades de 
+		individuos con intereses, actividades o relaciones en común (como 
+		amistad, parentesco, trabajo). Las redes sociales permiten el contacto 
+		entre personas y funcionan como un medio para comunicarse e intercambiar 
+		información. Los individuos no necesariamente se tienen que conocer antes de 
+		entrar en contacto a través de una red social, sino que pueden hacerlo a 
+		través de ella, y ese es uno de los mayores beneficios de las 
+		comunidades virtuales.<o:p></o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		&nbsp;</o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		<o:p><strong>7. Streaming.&nbsp;</strong></o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		La transmisión por streaming, también llamada transmisión en directo, en 
+		continuo o en descarga continua, es un método de distribución de 
+		contenidos multimedia (audiovisuales) a través de redes informáticas, 
+		que transmite el contenido al instante mismo en que es consumido, sin 
+		que deba descargarse y almacenarse previamente. El término streaming 
+		proviene del inglés stream (“chorro” o “arroyo”) y hace alusión a la 
+		transmisión ininterrumpida del contenido audiovisual. La transmisión de contenidos comerciales vía streaming se 
+		popularizó luego del año 2000 en el mundo entero, a medida que los 
+		servicios de ancho de banda permitían igualar la tasa de transmisión de 
+		datos necesaria para transmitir series, películas, podcasts y otros 
+		contenidos diferidos (o sea, grabados previamente) o bien diferentes 
+		servicios de televisión en vivo y directo. </span></p>
+		<p class="style29">&nbsp;</p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		&nbsp;<strong>8. Buscadores.</strong></o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		Un buscador web, buscador de internet o motor de búsqueda (del inglés 
+		Search Engine) es una herramienta informática que rastrea información 
+		almacenada en diferentes servidores web a lo largo del mundo, a partir 
+		de alguna palabra clave introducida por el usuario. Los buscadores son un instrumento fundamental para el uso de 
+		internet, dado que sirven de nexo entre la información disponible y 
+		aquellos que la requieren. Para eso, sortean, organizan y presentan al 
+		usuario las etiquetas e identificadores del contenido disponible en 
+		internet y en otros servicios de almacenamiento en línea, y le permiten 
+		además aplicar diferentes filtros para refinar la búsqueda. La presencia 
+		de estas herramientas facilita enormemente la recuperación de 
+		información en línea.</span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		&nbsp;</o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif"><o:p>
+		&nbsp;<strong>9. Inteligencia artificial.</strong></o:p></span></p>
+		<p class="style29">
+		<span style="font-size:12.0pt;line-height:150%;font-family:&quot;Times New Roman&quot;,serif">
+		La inteligencia artificial es la habilidad de una máquina de presentar 
+		las mismas capacidades que los seres humanos, como el razonamiento, el 
+		aprendizaje, la creatividad y la capacidad de planear. La IA permite que los sistemas tecnológicos se los sistemas 
+		tecnológicos perciban su entorno, se relacionen con él, resuelvan 
+		problemas y actúen con un fin específico. La máquina recibe datos (ya 
+		preparados o recopilados a través de sus propios sensores, por ejemplo, 
+		una cámara), los procesa y responde a ellos. Los sistemas de IA son 
+		capaces de adaptar su comportamiento en cierta medida, analizar los 
+		efectos de acciones previas y de trabajar de manera autónoma. 
+		</span></p>
+	<p class="style29">
+		<o:p></o:p>
+		</p>
+
+	</div>
+
+	</td>
+
+	<td class="style10" rowspan="2">&nbsp;</td>
+</tr>
+
+<tr>
+	<td class="style34" valign="top">
+
+	<img alt="" src="6072846.png" width="264" height="253" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<img alt="" src="1535005.png" width="275" height="231" /></td>
+
+</tr>
+</table>
+
+</body>
+</html>

@@ -108,7 +108,6 @@
 	text-align: left;
 }
 </style>
-
 <script type="text/javascript">
 var timers = {};
 
@@ -132,7 +131,6 @@ function ocultarGrupo(clase) {
     }, 5000); 
 }
 </script>
-
 <script type="text/javascript">
 function publicarOpinion() {
     var nombre = document.getElementById("nombre").value;
@@ -143,54 +141,43 @@ function publicarOpinion() {
         return;
     }
 
-    // Enviar la nueva opinión al servidor usando fetch
-    fetch('http://localhost:5000/api/opiniones', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ nombre: nombre, opinion: opinion })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('Opinión publicada:', data);
-        mostrarOpiniones();  // Recargar las opiniones desde el servidor
-    })
-    .catch(error => {
-        console.error('Error:', error);
+    var opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+
+    opiniones.unshift({
+        nombre: nombre,
+        opinion: opinion
     });
+
+    localStorage.setItem("opiniones", JSON.stringify(opiniones));
+
+    mostrarOpiniones();
 
     document.getElementById("nombre").value = "";
     document.getElementById("opinion").value = "";
 }
 </script>
 
+
 <script type="text/javascript">
 function mostrarOpiniones() {
     var contenedor = document.getElementById("listaOpiniones");
     contenedor.innerHTML = "";
 
-    // Obtener las opiniones desde el servidor usando fetch
-    fetch('http://localhost:5000/api/opiniones')
-        .then(response => response.json())
-        .then(opiniones => {
-            opiniones.forEach(function(op) {
-                var div = document.createElement("div");
-                div.style.border = "1px solid #3399FF";
-                div.style.padding = "10px";
-                div.style.marginBottom = "10px";
-                div.style.backgroundColor = "#E6F5FF";
+    var opiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
 
-                div.innerHTML =
-                    "<strong>" + op.nombre + "</strong><br />" +
-                    "<p>" + op.opinion + "</p>";
+    opiniones.forEach(function(op) {
+        var div = document.createElement("div");
+        div.style.border = "1px solid #3399FF";
+        div.style.padding = "10px";
+        div.style.marginBottom = "10px";
+        div.style.backgroundColor = "#E6F5FF";
 
-                contenedor.appendChild(div);
-            });
-        })
-        .catch(error => {
-            console.error('Error al cargar las opiniones:', error);
-        });
+        div.innerHTML =
+            "<strong>" + op.nombre + "</strong><br />" +
+            "<p>" + op.opinion + "</p>";
+
+        contenedor.appendChild(div);
+    });
 }
 </script>
 
@@ -411,5 +398,3 @@ function mostrarOpiniones() {
 </body>
 
 </html>
-
-
